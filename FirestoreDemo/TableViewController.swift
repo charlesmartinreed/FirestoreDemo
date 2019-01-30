@@ -21,6 +21,22 @@ class TableViewController: UITableViewController {
         tableView.dataSource = self
         
         initializeFirestoreDB()
+        loadData()
+    }
+    
+    func loadData() {
+        //use db, access collection
+        db.collection("messages").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else {
+                self.messagesArray = querySnapshot!.documents.flatMap( {Message(dictionary: $0.data())} ) //creates an array with all the messages currently available on our firebase database
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     func initializeFirestoreDB() {
@@ -64,13 +80,25 @@ class TableViewController: UITableViewController {
     }
     
     //MARK:- Table view delegate methods
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messagesArray.count
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ComposeCell", for: indexPath)
+        
+        let message = messagesArray[indexPath.row]
+        
+        //compose the cell
+        cell.textLabel?.text = "\(message.name): \(message.content)"
+        cell.detailTextLabel?.text = "\(message.timeStamp)"
+        
+        return cell
+    }
 }
 
 
