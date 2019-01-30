@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		51219D57521892B5A6CB57E5 /* Pods_FirestoreDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF637A48420FAA0025573CAF /* Pods_FirestoreDemo.framework */; };
 		8C515E5222015E280069FD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C515E5122015E280069FD54 /* AppDelegate.swift */; };
-		8C515E5422015E280069FD54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C515E5322015E280069FD54 /* ViewController.swift */; };
+		8C515E5422015E280069FD54 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C515E5322015E280069FD54 /* TableViewController.swift */; };
 		8C515E5722015E280069FD54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C515E5522015E280069FD54 /* Main.storyboard */; };
 		8C515E5922015E290069FD54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C515E5822015E290069FD54 /* Assets.xcassets */; };
 		8C515E5C22015E290069FD54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C515E5A22015E290069FD54 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		23D22EC0ED42F367B5653107 /* Pods-FirestoreDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirestoreDemo/Pods-FirestoreDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8C515E4E22015E280069FD54 /* FirestoreDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C515E5122015E280069FD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C515E5322015E280069FD54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C515E5322015E280069FD54 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8C515E5622015E280069FD54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C515E5822015E290069FD54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C515E5B22015E290069FD54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8C515E5122015E280069FD54 /* AppDelegate.swift */,
-				8C515E5322015E280069FD54 /* ViewController.swift */,
+				8C515E5322015E280069FD54 /* TableViewController.swift */,
 				8C515E5522015E280069FD54 /* Main.storyboard */,
 				8C515E5822015E290069FD54 /* Assets.xcassets */,
 				8C515E5A22015E290069FD54 /* LaunchScreen.storyboard */,
@@ -235,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C515E5422015E280069FD54 /* ViewController.swift in Sources */,
+				8C515E5422015E280069FD54 /* TableViewController.swift in Sources */,
 				8C515E5222015E280069FD54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

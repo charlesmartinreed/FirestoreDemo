@@ -21,18 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //MARK:- Firebase configuration
         FirebaseApp.configure()
-        let db = Firestore.firestore()
-        db.collection("cities").document("LA").setData([
-            "name" : "Los Angeles",
-            "state": "CA",
-            "country": "USA"
-        ]) { (error: Error?) in
-            if let error = error {
-                print("\(error.localizedDescription)")
-            } else {
-                print("document was successfully created and written.")
-            }
-        }
+//        let db = Firestore.firestore()
+//        db.collection("cities").document("LA").setData([
+//            "name" : "Los Angeles",
+//            "state": "CA",
+//            "country": "USA"
+//        ]) { (error: Error?) in
+//            if let error = error {
+//                print("\(error.localizedDescription)")
+//            } else {
+//                print("document was successfully created and written.")
+//            }
+//        }
         
         
         

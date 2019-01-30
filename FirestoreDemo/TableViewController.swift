@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
-class ViewController: UITableViewController {
+class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    //MARK:- IBActions
+    @IBAction func composeMessage(_ sender: UIBarButtonItem) {
+    }
+    
 
 }
 
