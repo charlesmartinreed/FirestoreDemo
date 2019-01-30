@@ -30,7 +30,9 @@ struct Message {
 
 extension Message : DocumentSerializable {
     init?(dictionary: [String : Any]) {
-        guard let name = dictionary["name"] as? String, let content = dictionary["content"] as? String, let timeStamp = dictionary["timeStamp"] as? Date else { fatalError("Could not serialize document!") }
+        guard let name = dictionary["name"] as? String,
+            let content = dictionary["content"] as? String,
+            let timeStamp = dictionary["timeStamp"] as? Date else { fatalError("Could not serialize document!") }
         
          self.init(name: name, content: content, timeStamp: timeStamp)
     }

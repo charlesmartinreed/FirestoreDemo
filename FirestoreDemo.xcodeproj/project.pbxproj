@@ -83,13 +83,13 @@
 			isa = PBXGroup;
 			children = (
 				8C515E5122015E280069FD54 /* AppDelegate.swift */,
+				8C515E6522016B4E0069FD54 /* Message.swift */,
 				8C515E5322015E280069FD54 /* TableViewController.swift */,
 				8C515E5522015E280069FD54 /* Main.storyboard */,
 				8C515E5822015E290069FD54 /* Assets.xcassets */,
 				8C515E5A22015E290069FD54 /* LaunchScreen.storyboard */,
 				8C515E6322015F990069FD54 /* GoogleService-Info.plist */,
 				8C515E5D22015E290069FD54 /* Info.plist */,
-				8C515E6522016B4E0069FD54 /* Message.swift */,
 			);
 			path = FirestoreDemo;
 			sourceTree = "<group>";
