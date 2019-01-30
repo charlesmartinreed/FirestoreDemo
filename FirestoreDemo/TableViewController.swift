@@ -22,6 +22,7 @@ class TableViewController: UITableViewController {
         
         initializeFirestoreDB()
         loadData()
+        checkForUpdates()
     }
     
     func loadData() {
@@ -30,13 +31,32 @@ class TableViewController: UITableViewController {
             if let error = error {
                 print("\(error.localizedDescription)")
             } else {
-                self.messagesArray = querySnapshot!.documents.flatMap( {Message(dictionary: $0.data())} ) //creates an array with all the messages currently available on our firebase database
+                self.messagesArray = querySnapshot!.documents.compactMap( {Message(dictionary: $0.data())} ) //creates an array with all the messages currently available on our firebase database
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
         }
+    }
+    
+    //MARK:- Firebase listener
+    func checkForUpdates() {
+        //only query for updates that happen AFTER calling this function for first time
+        db.collection("messages").whereField("timeStamp", isGreaterThan: Date()).addSnapshotListener { (querySnapshot, error) in
+            guard let snapshot = querySnapshot else { return }
+            
+            snapshot.documentChanges.forEach({ (diff) in
+                //if something new was added, append to messages and reload view the reflect it to user
+                if diff.type == .added {
+                    self.messagesArray.append(Message(dictionary: diff.document.data())!)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            })
+        }
+        
     }
     
     func initializeFirestoreDB() {
