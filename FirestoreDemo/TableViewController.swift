@@ -113,9 +113,13 @@ class TableViewController: UITableViewController {
         
         let message = messagesArray[indexPath.row]
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        let postDate = formatter.string(from: message.timeStamp)
+        
         //compose the cell
         cell.textLabel?.text = "\(message.name): \(message.content)"
-        cell.detailTextLabel?.text = "\(message.timeStamp)"
+        cell.detailTextLabel?.text = "\(postDate)"
         
         return cell
     }
