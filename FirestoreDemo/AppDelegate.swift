@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //MARK:- Firebase configuration
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        db.collection("cities").document("LA").setData([
+            "name" : "Los Angeles",
+            "state": "CA",
+            "country": "USA"
+        ]) { (error: Error?) in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else {
+                print("document was successfully created and written.")
+            }
+        }
+        
+        
+        
+        
+
         return true
     }
 
